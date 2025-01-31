@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .dropdown {
+            margin-top: 20px;
+        }
+        .dropdown select {
+            width: 100%;
+            padding: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .tracker {
+            margin-top: 20px;
+        }
+        .tracker button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .login-form input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            width: 250px;
+        }
+        .login-form button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 250px;
+        }
+        .header-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .header-buttons button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Learning Hub</h2>
+        <div class="dropdown">
+            <label for="courses">Courses</label>
+            <select id="courses">
+                <option value="">Select Course</option>
+                <option>Java</option>
+                <option>Python</option>
+                <option>.NET</option>
+                <option>Gen AI</option>
+                <option>AWS</option>
+                <option>GCP</option>
+                <option>Azure Cloud</option>
+                <option>DevOps</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header with Profile and Login buttons -->
+        <div class="header-buttons">
+            <button onclick="goToProfile()">Profile</button>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form" id="loginForm">
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Course Content -->
+        <div class="course-content" id="courseContent" style="display:none;">
+            <div class="tracker">
+                <button onclick="trackCourse()">Course Tracker</button>
+            </div>
+            <div id="videoWindow">
+                <button class="buttons" onclick="prev()">Previous</button>
+                <button class="buttons" onclick="playPause()">Play</button>
+                <button class="buttons" onclick="next()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            // Handle login logic here
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            if (username && password) {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('courseContent').style.display = 'block';
+            } else {
+                alert("Please enter valid credentials");
+            }
+        }
+
+        function playPause() {
+            alert("Play/Pause button clicked");
+        }
+
+        function prev() {
+            alert("Previous button clicked");
+        }
+
+        function next() {
+            alert("Next button clicked");
+        }
+
+        function trackCourse() {
+            alert("Course Tracker button clicked");
+        }
+
+        function goToProfile() {
+            alert("Profile button clicked");
+        }
+    </script>
+</body>
+</html>
